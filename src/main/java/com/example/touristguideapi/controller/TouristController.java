@@ -5,9 +5,7 @@ import com.example.touristguideapi.service.TouristService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @Controller
@@ -28,9 +26,14 @@ public class TouristController {
         return new ResponseEntity<>(getAllAttractions, HttpStatus.OK);
     }
 
-    @GetMapping("/{name}") //denne get Endpoint hentes, når der angives et name i browseren fx welcome/hærvejen
+    @GetMapping("/{name}") //denne get Endpoint hentes, når der angives et name i browseren fx attractions/hærvejen
     public ResponseEntity<String> getDescriptionByName(@PathVariable String name){
         return new ResponseEntity<String>(ts.getDescription(name),HttpStatus.OK);
+    }
+    @PostMapping("/add") //denne post Endpoint hentes, når der skrives attractions/add i browseren
+    public ResponseEntity<Void> addAttraction(@RequestParam String name, @RequestParam String description){
+        ts.addAttraction(name,description);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
