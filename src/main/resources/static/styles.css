@@ -1,0 +1,84 @@
+/* diverse variable til styling*/
+:root { /*når CSS-variable angives her med :root og --foran variabel navn, så kan de anvendes i hele stylesheet ved at angive i var(variabelNavn)*/
+    --primary-color: #D2D8CD; /*Celeste*/
+    --secondary-color: #A1BFC4; /*Opal*/
+    --first-contrast-color: #4C5630; /*Verdigris*/
+    --second-contrast-color: #8A93CB; /*Polo Blue*/
+    --padding-default: 10px; /*padding er afstand mellem indhold i celle og til kant, hvor grid-gap er afstand mellem cellerne i grid*/
+    --font-family: Verdana, Tahoma, sans-serif; /*første prioritet af skrifttype er Verdana, herefter Tahoma (i sans-serif serien)*/
+}
+
+/* Mobile first layout */
+body {
+    min-height: 100vh; /* Sæt body-højden til mindst 100% af skærmhøjden */
+    display: grid; /* Aktiverer grid-layout */
+    grid-gap: 1em; /* Mellemrum mellem grid-områder. 1em her betyder at afstanden er lig med skriftstr brugt i body tekst*/
+    grid-template-areas:
+        'header' /* Headeren fylder hele bredden */
+        'nav' /* Navigationen fylder hele bredden */
+        'main' /* Hovedindholdet fylder hele bredden */
+        'image' /* Her vil jeg gerne have noget visuelt*/
+        'footer'; /* Foderen fylder hele bredden */
+    grid-template-rows: auto auto 1fr auto auto;
+    /* Højden på rækkerne.
+       Række header, nav og footer vil få en automatisk højde, som matcher deres indhold. Række main vil udfylde resten */
+    grid-template-columns: 1fr; /* Kun én kolonne */
+}
+
+/* bruges hvis min-width er 40em eller større */
+@media (min-width: 40em) {
+    body {
+        /* Horisontal centrering, 80% bredde */
+        width: 80%;
+        margin: 0 auto;
+
+        grid-template-areas:
+        'header header header' /* Headeren fylder begge kolonner */
+        'nav main image' /* Navigationen til venstre, hovedindhold i midten og image til højre */
+        'footer footer footer'; /* Footer fylder begge kolonner */
+        grid-template-columns: 15em 1fr 15em; /* Tre kolonner: nav og image er 15em bred, main fylder resten */
+        grid-template-rows: auto 1fr auto; /* Højden på rækkerne */
+    }
+}
+
+/* placering af de forskellige indholdsområder i grid*/
+header {
+    grid-area: header;
+    background-color: var(--secondary-color);
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+image {
+    grid-area: image;
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--secondary-color);
+}
+
+/* det visuelle i form af skrift og farver */
+body {
+    background-color: var(--primary-color);
+    font-family: var(--font-family);
+}
+h1{
+    text-align: center;
+
+}
+h2{
+
+}
+h3{
+    text-align: center;
+    font-style: italic;
+
+}
+
+
