@@ -35,6 +35,17 @@ public class TouristController {
         ts.addAttraction(name,description);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @PostMapping("/update") //denne post Endpoint hentes, når der skrives attraction/update
+    public ResponseEntity<Void> updateAttraction(@RequestParam String name, @RequestParam String decription){
+        ts.updateAttraction(name, decription);
+        return new ResponseEntity<>(HttpStatus.OK)
+    }
+
+    @PostMapping("/delete") //denne post Endpoint hentes, når der skrives attraction/delete
+    public ResponseEntity<Void> deleteAttraction(@RequestParam String name){
+        ts.deleteAttraction(name);
+        return new ResponseEntity<>(HttpStatus.OK)
+    }
 
 
 

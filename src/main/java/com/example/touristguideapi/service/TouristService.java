@@ -28,6 +28,10 @@ public class TouristService {
         tr.deleteAttraction(name);
     }
 
+    public void updateAttraction(String name, String description){
+        tr.updateAttraction(name,description);
+    }
+
     public List<TouristAttraction> getListOfAttraction(){
         return tr.getListOfAttractions();
     }
