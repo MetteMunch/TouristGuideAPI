@@ -36,7 +36,7 @@ body {
         'header header header' /* Headeren fylder begge kolonner */
         'nav main image' /* Navigationen til venstre, hovedindhold i midten og image til højre */
         'footer footer footer'; /* Footer fylder begge kolonner */
-        grid-template-columns: 20em 1fr 20em; /* Tre kolonner: nav og image er 15em bred, main fylder resten */
+        grid-template-columns: 20em 1fr 40em; /* Tre kolonner: nav er 20 em bred, image er 40em bred, main fylder resten */
         grid-template-rows: auto 1fr auto; /* Højden på rækkerne */
     }
 }
