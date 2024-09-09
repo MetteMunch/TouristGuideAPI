@@ -36,8 +36,8 @@ public class TouristController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @PostMapping("/update") //denne post Endpoint hentes og metoden køres, når der skrives attractions/update
-    public ResponseEntity<Void> updateAttraction(@RequestParam String name, @RequestParam String decription){
-        ts.updateAttraction(name, decription);
+    public ResponseEntity<Void> updateAttraction(@RequestParam String name, @RequestParam String description){
+        ts.updateAttraction(name, description);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

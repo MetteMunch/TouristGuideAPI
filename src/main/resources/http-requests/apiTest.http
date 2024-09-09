@@ -1,0 +1,38 @@
+### HTTP POST request' til at tjekke Endpoints
+### SpringBoot applikationen skal køre, for at der kan connectes til porten (localhost)
+
+# Tilføj en ny attraktion
+POST http://localhost:8080/attractions/add
+Content-Type: application/x-www-form-urlencoded
+
+name=NyAttraktion&description=Dette+er+en+beskrivelse+af+en+ny+attraktion
+
+###
+
+# Opdater en eksisterende attraktion
+POST http://localhost:8080/attractions/update
+Content-Type: application/x-www-form-urlencoded
+
+name=Hærvejen&description=Opdateret+beskrivelse
+
+###
+
+# Slet en attraktion
+POST http://localhost:8080/attractions/delete
+Content-Type: application/x-www-form-urlencoded
+
+name=NyAttraktion
+
+###
+
+# Hent alle attraktioner
+GET http://localhost:8080/attractions
+Accept: application/json
+
+###
+
+# Hent beskrivelse af en specifik attraktion (fx "Bornholms kyststi"). Ved kald på hærvejen, skal nedenstående request benytte
+# URL-encoding for æ (%C3%A6)
+GET http://localhost:8080/attractions/H%C3%A6rvejen
+Accept: application/json
+
