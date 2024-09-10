@@ -18,7 +18,7 @@ body {
         'nav' /* Navigationen fylder hele bredden */
         'main' /* Hovedindholdet fylder hele bredden */
         'image' /* Her vil jeg gerne have noget visuelt*/
-        'footer'; /* Foderen fylder hele bredden */
+        'footer'; /* Footer fylder hele bredden */
     grid-template-rows: auto auto 1fr auto auto;
     /* Højden på rækkerne.
        Række header, nav og footer vil få en automatisk højde, som matcher deres indhold. Række main vil udfylde resten */
