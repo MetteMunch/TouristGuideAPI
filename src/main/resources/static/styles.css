@@ -33,10 +33,10 @@ body {
         margin: 0 auto;
 
         grid-template-areas:
-        'header header header' /* Headeren fylder begge kolonner */
+        'header header header' /* Headeren fylder alle kolonner */
         'nav main image' /* Navigationen til venstre, hovedindhold i midten og image til højre */
-        'footer footer footer'; /* Footer fylder begge kolonner */
-        grid-template-columns: 20em 1fr 40em; /* Tre kolonner: nav er 20 em bred, image er 40em bred, main fylder resten */
+        'footer footer footer'; /* Footer fylder alle kolonner */
+        grid-template-columns: 20em 1fr 40fr; /* Tre kolonner: nav er 20 em bred, image er 40em bred, main fylder resten */
         grid-template-rows: auto 1fr auto; /* Højden på rækkerne */
     }
 }
